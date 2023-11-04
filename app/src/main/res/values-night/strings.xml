@@ -1,5 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">LinkActionsApplication</string>
     <string name="enter_link_url">Enter link URL</string>
     <string name="open_link_in_browser">Open Link in Browser</string>
     <string name="enter_email_address">Enter email address</string>
