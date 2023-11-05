@@ -1,6 +1,7 @@
 package com.example.linkactionsapplication.presentation
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.linkactionsapplication.databinding.ActivityMainBinding
 import com.example.linkactionsapplication.domain.MakePhoneCall
@@ -23,6 +24,8 @@ class MainActivity : AppCompatActivity() {
             val link = binding.linkEditText.text.toString()
             if (link.isNotEmpty()) {
                 openLinkInBrowser.execute(this, link)
+            } else {
+                Toast.makeText(this, "Enter a link", Toast.LENGTH_SHORT).show()
             }
         }
 
@@ -30,6 +33,8 @@ class MainActivity : AppCompatActivity() {
             val email = binding.emailEditText.text.toString()
             if (email.isNotEmpty()) {
                 sendEmail.execute(this, email)
+            } else {
+                Toast.makeText(this, "Enter an email address", Toast.LENGTH_SHORT).show()
             }
         }
 
@@ -37,6 +42,8 @@ class MainActivity : AppCompatActivity() {
             val phoneNumber = binding.phoneEditText.text.toString()
             if (phoneNumber.isNotEmpty()) {
                 makePhoneCall.execute(this, phoneNumber)
+            } else {
+                Toast.makeText(this, "Enter a phone number", Toast.LENGTH_SHORT).show()
             }
         }
 
@@ -45,6 +52,8 @@ class MainActivity : AppCompatActivity() {
             val longitude = binding.longitudeEditText.text.toString()
             if (latitude.isNotEmpty() && longitude.isNotEmpty()) {
                 openMap.execute(this, latitude.toDouble(), longitude.toDouble())
+            } else {
+                Toast.makeText(this, "Enter latitude and longitude", Toast.LENGTH_SHORT).show()
             }
         }
     }

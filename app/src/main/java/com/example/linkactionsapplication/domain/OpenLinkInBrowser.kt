@@ -6,7 +6,11 @@ import android.net.Uri
 
 class OpenLinkInBrowser {
     fun execute(context: Context, link: String) {
-        val intent = Intent(Intent.ACTION_VIEW, Uri.parse(link))
+        var url = link
+        if (!url.startsWith("http://") && !url.startsWith("https://")) {
+            url = "https://$url"
+        }
+        val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
         context.startActivity(intent)
     }
 }
